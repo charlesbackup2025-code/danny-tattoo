@@ -72,8 +72,6 @@
     .nav-link { color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
     .featured-row { display: flex; align-items: center; gap: 10px; }
     .nav-featured .hero-gallery { width: 156px; aspect-ratio: 4 / 5; }
-    .gallery-index { display: flex; flex-direction: column; gap: 9px; color: var(--muted); font-size: 10px; line-height: 1; font-weight: 800; }
-    .gallery-index span:first-child { color: var(--gold-soft); }
     .hero { position: relative; z-index: 1; max-width: none; padding: 250px 0 58px; overflow: hidden; }
     .hero-backdrop { position: absolute; z-index: 0; top: 0; left: 50%; transform: translateX(-50%); width: 100vw; height: 500px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; opacity: .42; filter: saturate(.82) contrast(1.08); pointer-events: none; }
     .hero-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,.18) 0%, rgba(8,8,8,.55) 48%, var(--ink) 100%); }
@@ -86,7 +84,6 @@
     .hero-gallery img:nth-child(2) { animation-delay: 3s; }
     .hero-gallery img:nth-child(3) { animation-delay: 6s; }
     .hero-gallery img:nth-child(4) { animation-delay: 9s; }
-    .gallery-credit { position: absolute; left: 14px; bottom: 12px; z-index: 2; color: #fff; background: rgba(0,0,0,.72); padding: 6px 9px; font-size: 10px; letter-spacing: .08em; }
     @keyframes heroFade { 0%, 20% { opacity: 1; } 25%, 100% { opacity: 0; } }
     .eyebrow { color: var(--gold-soft); font-size: 12px; letter-spacing: .25em; text-transform: uppercase; font-weight: 700; }
     h1 { font-size: clamp(48px, 9vw, 104px); line-height: .92; letter-spacing: -.06em; margin: 20px 0 26px; max-width: 760px; }
@@ -152,7 +149,6 @@
       .hero-grid { grid-template-columns: 1fr; gap: 32px; }
       .nav-featured .hero-gallery { width: 108px; }
       .featured-row { gap: 8px; }
-      .gallery-index { gap: 9px; font-size: 10px; }
       .services { grid-template-columns: repeat(2, 1fr); }
       .booking-box { grid-template-columns: 1fr; }
       .location-image { margin-top: 22px; }
@@ -204,9 +200,7 @@
               <img src="/tattoo-02.jpg" alt="Tatuagem autoral de terror colorida">
               <img src="/tattoo-03.jpg" alt="Tatuagem premiada em Blackwork">
               <img src="/tattoo-04.jpg" alt="Tatuagem de dragão e caveira em Blackwork">
-              <a class="gallery-credit" href="https://www.instagram.com/dannytattoo_art/" target="_blank" rel="noopener">FOTOS: @DANNYTATTOO_ART ↗</a>
             </div>
-            <div class="gallery-index" aria-label="Fotos em destaque"><span>1</span><span>2</span><span>3</span><span>4</span></div>
           </div>
         </div>
       </div>
