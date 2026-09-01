@@ -237,6 +237,51 @@
       .hero-booking > .button { width: 100%; padding: 0 10px; font-size: 10px; }
       .gallery-credit { left: 6px; bottom: 6px; padding: 4px 5px; font-size: 7px; }
     }
+
+    /* Modo fotos: sem grades, cards, molduras ou textos sobre a galeria. */
+    #tattoos { padding-top: 28px; }
+    #tattoos .section-head { display: none; }
+    #tattoos .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+    }
+    #tattoos .card {
+      flex: 0 0 33.333333%;
+      min-height: 460px;
+      height: 460px;
+      display: block;
+      border: 0;
+      background: #080808;
+      border-radius: 0;
+      transform: none;
+    }
+    #tattoos .card:hover { transform: none; border: 0; }
+    #tattoos .card > div:not(.card-bottom),
+    #tattoos .card-bottom { display: none; }
+    #tattoos .photo-trigger {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: #080808;
+    }
+    #tattoos .card-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #080808;
+      filter: saturate(.88) contrast(1.06);
+    }
+    @media (max-width: 760px) {
+      #tattoos { padding-top: 0; }
+      #tattoos .card { flex-basis: 100%; height: 430px; min-height: 430px; }
+    }
   </style>
 </head>
 <body>
