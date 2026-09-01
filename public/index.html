@@ -184,6 +184,46 @@
     .photo-trigger .card-image { transition: transform .25s, filter .25s; }
     .photo-trigger:hover .card-image { transform: scale(1.03); filter: saturate(1) contrast(1.08); }
     @media (max-width:760px) { .inline-booking { padding: 20px 16px; } .available-times { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Réplica: no celular, a foto fica logo abaixo de “Ver tattoos” e o texto fica ao lado. */
+    .hero-grid > .hero-gallery {
+      position: absolute;
+      top: -219px;
+      right: 0;
+      width: 156px;
+    }
+    @media (max-width: 760px) {
+      .hero { padding-top: 86px; }
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) 120px;
+        gap: 14px;
+        align-items: start;
+      }
+      .hero-copy { grid-column: 1; grid-row: 1; min-width: 0; }
+      .hero-grid > .hero-gallery {
+        position: relative;
+        top: auto;
+        right: auto;
+        grid-column: 2;
+        grid-row: 1;
+        width: 120px;
+        aspect-ratio: 4 / 5;
+      }
+      .hero-booking h2 {
+        white-space: normal;
+        font-size: clamp(24px, 7vw, 34px);
+      }
+      .hero-booking p { font-size: 12px; line-height: 1.45; }
+      .hero-booking .steps {
+        grid-template-columns: 1fr;
+        padding-left: 12px;
+        margin-top: 16px;
+      }
+      .hero-booking .step { gap: 8px; padding: 9px 0; }
+      .hero-booking .step span { font-size: 11px; }
+      .hero-booking > .button { width: 100%; padding: 0 10px; font-size: 10px; }
+      .gallery-credit { left: 6px; bottom: 6px; padding: 4px 5px; font-size: 7px; }
+    }
   </style>
 </head>
 <body>
@@ -193,13 +233,6 @@
         <a class="brand" href="#inicio">Danny <span>Tattoo</span></a>
         <div class="nav-featured">
           <a class="nav-link" href="#tattoos">Ver tattoos ↓</a>
-          <div class="hero-gallery" aria-label="Foto em destaque da Danny Tattoo">
-            <img src="/tattoo-01.jpg" alt="Tatuagem delicada de cobra e flores">
-            <img src="/tattoo-02.jpg" alt="Tatuagem autoral de terror colorida">
-            <img src="/tattoo-03.jpg" alt="Tatuagem premiada em Blackwork">
-            <img src="/tattoo-04.jpg" alt="Tatuagem de dragão e caveira em Blackwork">
-            <a class="gallery-credit" href="https://www.instagram.com/dannytattoo_art/" target="_blank" rel="noopener">FOTOS: @DANNYTATTOO_ART ↗</a>
-          </div>
         </div>
       </div>
     </nav>
@@ -251,6 +284,13 @@
               <div class="booking-note">Sinal: 20% do orçamento • horários das 8h às 20h</div>
             </div>
           </div>
+        </div>
+        <div class="hero-gallery" aria-label="Foto em destaque da Danny Tattoo">
+          <img src="/tattoo-01.jpg" alt="Tatuagem delicada de cobra e flores">
+          <img src="/tattoo-02.jpg" alt="Tatuagem autoral de terror colorida">
+          <img src="/tattoo-03.jpg" alt="Tatuagem premiada em Blackwork">
+          <img src="/tattoo-04.jpg" alt="Tatuagem de dragão e caveira em Blackwork">
+          <a class="gallery-credit" href="https://www.instagram.com/dannytattoo_art/" target="_blank" rel="noopener">FOTOS: @DANNYTATTOO_ART ↗</a>
         </div>
       </div>
     </div>
