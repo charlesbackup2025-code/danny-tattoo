@@ -70,6 +70,9 @@
     .brand span { color: var(--gold-soft); }
     .nav-featured { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
     .nav-link { color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
+    .featured-row { display: flex; align-items: center; gap: 10px; }
+    .gallery-index { display: flex; flex-direction: column; gap: 8px; color: var(--muted); font-size: 11px; line-height: 1; font-weight: 800; }
+    .gallery-index span:first-child { color: var(--gold-soft); }
     .nav-featured .hero-gallery { width: 156px; aspect-ratio: 4 / 5; }
     .hero { position: relative; z-index: 1; max-width: none; padding: 250px 0 58px; }
     .hero-grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
@@ -142,7 +145,9 @@
       header { min-height: auto; }
       .hero { padding: 218px 0 48px; }
       .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-      .nav-featured .hero-gallery { width: 120px; }
+      .nav-featured .hero-gallery { width: 108px; }
+      .featured-row { gap: 8px; }
+      .gallery-index { gap: 9px; font-size: 10px; }
       .services { grid-template-columns: repeat(2, 1fr); }
       .booking-box { grid-template-columns: 1fr; }
       .location-image { margin-top: 22px; }
@@ -187,14 +192,14 @@
       <div class="wrap nav-inner">
         <a class="brand" href="#inicio">Danny <span>Tattoo</span></a>
         <div class="nav-featured">
-          <a class="nav-link" href="#tattoos">Ver tattoos ↓</a>
-          <div class="hero-gallery" aria-label="Foto em destaque da Danny Tattoo">
+          <a class="nav-link" href="#tattoos">Ver tudo ↓</a>
+          <div class="featured-row"><div class="hero-gallery" aria-label="Foto em destaque da Danny Tattoo">
             <img src="/tattoo-01.jpg" alt="Tatuagem delicada de cobra e flores">
             <img src="/tattoo-02.jpg" alt="Tatuagem autoral de terror colorida">
             <img src="/tattoo-03.jpg" alt="Tatuagem premiada em Blackwork">
             <img src="/tattoo-04.jpg" alt="Tatuagem de dragão e caveira em Blackwork">
             <a class="gallery-credit" href="https://www.instagram.com/dannytattoo_art/" target="_blank" rel="noopener">FOTOS: @DANNYTATTOO_ART ↗</a>
-          </div>
+          </div><div class="gallery-index" aria-label="Fotos em destaque"><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
         </div>
       </div>
     </nav>
