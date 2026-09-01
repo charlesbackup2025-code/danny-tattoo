@@ -8,6 +8,15 @@ function json(data, status = 200) {
   });
 }
 
+async function barberFetch(env, path, init = {}) {
+  // Prefer a same-account service binding. It avoids the 1042 response that
+  // Cloudflare can return when a Worker calls another workers.dev hostname.
+  if (env?.BARBER?.fetch) {
+    return env.BARBER.fetch(new Request(`https://barber${path}`, init));
+  }
+  return fetch(`${CALENDAR_BACKEND}${path}`, init);
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -16,7 +25,7 @@ export default {
       const date = url.searchParams.get('date') || '';
       if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return json({ error: 'Data inválida.' }, 400);
       try {
-        const response = await fetch(`${CALENDAR_BACKEND}/api/availability?date=${encodeURIComponent(date)}`, {
+        const response = await barberFetch(env, `/api/availability?date=${encodeURIComponent(date)}`, {
           headers: { 'cache-control': 'no-store' }
         });
         return new Response(await response.text(), {
@@ -36,7 +45,7 @@ export default {
         return json({ error: 'Informe nome, estilo, data e horário válidos.' }, 400);
       }
       try {
-        const response = await fetch(`${CALENDAR_BACKEND}/api/tattoo-book`, {
+        const response = await barberFetch(env, '/api/tattoo-book', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ date, time, service, name: name.trim() })
